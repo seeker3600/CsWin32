@@ -10,3 +10,4 @@ EnumWindows
 GetWindowTextLength
 GetWindowText
 WPARAM
+HWND_BOTTOM

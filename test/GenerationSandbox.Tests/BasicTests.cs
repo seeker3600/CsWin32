@@ -28,6 +28,13 @@ public class BasicTests
     }
 
     [Fact]
+    public void HWND_BOTTOM_Test()
+    {
+        HWND b = Constants.HWND_BOTTOM;
+        Assert.Equal(1, b.Value);
+    }
+
+    [Fact]
     public void DISPLAYCONFIG_VIDEO_SIGNAL_INFO_Test()
     {
         DISPLAYCONFIG_VIDEO_SIGNAL_INFO i = default;

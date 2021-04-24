@@ -2286,6 +2286,11 @@ namespace Microsoft.Windows.CsWin32
                         value = CastExpression(PointerType(PredefinedType(Token(SyntaxKind.CharKeyword))), ParenthesizedExpression(value));
                         requiresUnsafe = true;
                     }
+                    else if (name.StartsWith("HWND", StringComparison.Ordinal))
+                    {
+                        // Cast to IntPtr first, then the actual handle struct.
+                        value = CastExpression(fieldType.Type, CastExpression(IntPtrTypeSyntax, ParenthesizedExpression(value)));
+                    }
                     else
                     {
                         value = CastExpression(fieldType.Type, ParenthesizedExpression(value));
